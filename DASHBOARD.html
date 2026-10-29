@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Results | TOTAL WINNERS CHILD</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="student-dashboard">
+  <main class="admin-wrap">
+    <header class="school-heading">
+      <div class="school-logo">TWC</div>
+      <h1>TOTAL WINNERS CHILD</h1>
+      <p>Official Student Result Sheet</p>
+    </header>
+
+    <section class="panel">
+      <div class="result-topline">
+        <div>
+          <p class="eyebrow">STUDENT REPORT</p>
+          <h2 id="student-welcome">Welcome, Student</h2>
+          <p id="student-details">Loading student details...</p>
+        </div>
+        <div class="result-actions no-print">
+          <button id="print-result-button" type="button">Print / Save as PDF</button>
+          <button id="student-logout-button" type="button">Log Out</button>
+        </div>
+      </div>
+
+      <div class="result-filters no-print">
+        <div>
+          <label for="view-session">Academic Session</label>
+          <select id="view-session">
+            <option value="">All sessions</option>
+          </select>
+        </div>
+        <div>
+          <label for="view-term">Term</label>
+          <select id="view-term">
+            <option value="">All terms</option>
+            <option>First Term</option>
+            <option>Second Term</option>
+            <option>Third Term</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="performance-grid">
+      <div class="panel performance-card">
+        <h3>Overall Average</h3>
+        <div id="average-circle" class="average-circle" aria-label="Overall average">
+          <span id="average-value">--%</span>
+        </div>
+        <p id="average-remark">Your performance will appear here.</p>
+      </div>
+
+      <div class="panel performance-card">
+        <h3>Subjects Recorded</h3>
+        <div class="big-number" id="subject-count">0</div>
+        <p>Subjects with results entered for the selected session and term.</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Academic Performance</h2>
+      <p class="muted">CA is marked over 40. Examination is marked over 60. Total score is over 100.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>CA / 40</th>
+              <th>Exam / 60</th>
+              <th>Total / 100</th>
+              <th>Grade</th>
+              <th>Remark</th>
+            </tr>
+          </thead>
+          <tbody id="student-results-body"></tbody>
+        </table>
+      </div>
+      <p id="no-results-message" class="message"></p>
+    </section>
+
+    <section class="panel result-summary-panel">
+      <h2>Class Teacher's / Management's Remarks</h2>
+      <p id="overall-comment">Results will appear here once they have been entered by the administrator.</p>
+      <div class="signature-area">
+        <div>
+          <div class="signature-line"></div>
+          <strong>CLASS TEACHER</strong>
+        </div>
+        <div>
+          <div class="signature-line"></div>
+          <strong>SIGNED BY MANAGEMENT</strong>
+        </div>
+      </div>
+    </section>
+
+    <footer>© TOTAL WINNERS CHILD · Official School Result</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1177 @@
+
+/* =========================================
+   TOTAL WINNERS CHILD
+   Professional School Results Portal
+   File: style.css
+========================================= */
+
+/* 1. COLOURS AND GLOBAL SETTINGS */
+:root {
+  --primary: #102a56;
+  --primary-dark: #091a38;
+  --primary-light: #eaf0fa;
+  --gold: #d6a437;
+  --gold-light: #fff5d9;
+  --white: #ffffff;
+  --background: #f4f7fc;
+  --text: #202b3c;
+  --muted: #667085;
+  --border: #dce3ed;
+  --success: #16804a;
+  --success-bg: #e8f7ee;
+  --warning: #9a6700;
+  --warning-bg: #fff4d6;
+  --danger: #c62828;
+  --danger-bg: #fdecec;
+  --radius: 12px;
+  --shadow: 0 8px 24px rgba(16, 42, 86, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--background);
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* 2. SCHOOL HEADER */
+.school-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 24px 20px;
+  background: var(--white);
+  border-bottom: 4px solid var(--gold);
+  text-align: left;
+}
+
+.school-logo {
+  width: 82px;
+  height: 82px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.school-header h1 {
+  margin: 0;
+  color: var(--primary);
+  font-size: clamp(22px, 4vw, 34px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0.5px;
+}
+
+.school-header p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* 3. NAVIGATION */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 13px 5%;
+  color: var(--white);
+  background: var(--primary);
+}
+
+.navbar a {
+  color: var(--white);
+  font-weight: 600;
+}
+
+.navbar a:hover {
+  color: var(--gold);
+}
+
+.navbar-brand {
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+/* 4. PAGE LAYOUT */
+.container {
+  width: min(1120px, 92%);
+  margin: 32px auto;
+}
+
+.page-title {
+  margin: 0 0 6px;
+  color: var(--primary);
+  font-size: 27px;
+  line-height: 1.3;
+}
+
+.page-description {
+  margin: 0 0 24px;
+  color: var(--muted);
+}
+
+.section-title {
+  margin: 0 0 18px;
+  color: var(--primary);
+  font-size: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.mt-1 {
+  margin-top: 8px;
+}
+
+.mt-2 {
+  margin-top: 16px;
+}
+
+.mt-3 {
+  margin-top: 24px;
+}
+
+/* 5. CARDS AND PANELS */
+.card,
+.panel,
+.form-card,
+.login-card,
+.result-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.card,
+.panel,
+.form-card {
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.login-card {
+  width: min(440px, 100%);
+  margin: 36px auto;
+  padding: 30px;
+}
+
+.card h2,
+.panel h2,
+.form-card h2,
+.login-card h2 {
+  margin-top: 0;
+  color: var(--primary);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+/* 6. FORMS */
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  color: var(--text);
+  background: var(--white);
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(16, 42, 86, 0.12);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: 17px;
+  min-height: 17px;
+  height: 17px;
+  margin: 0;
+  accent-color: var(--primary);
+}
+
+.form-help {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.form-grid .form-group {
+  margin-bottom: 0;
+}
+
+/* 7. BUTTONS */
+.btn,
+button.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 10px 18px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  color: var(--white);
+  background: var(--primary);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-gold {
+  color: #201700;
+  background: var(--gold);
+}
+
+.btn-gold:hover {
+  background: #c39324;
+}
+
+.btn-secondary {
+  color: var(--primary);
+  background: var(--primary-light);
+  border-color: var(--border);
+}
+
+.btn-secondary:hover {
+  background: #dce6f7;
+}
+
+.btn-danger {
+  color: var(--white);
+  background: var(--danger);
+}
+
+.btn-danger:hover {
+  background: #a91f1f;
+}
+
+.btn-success {
+  color: var(--white);
+  background: var(--success);
+}
+
+.btn-block {
+  display: flex;
+  width: 100%;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+/* 8. STATUS AND MESSAGE BOXES */
+.message,
+.alert {
+  padding: 12px 15px;
+  margin: 14px 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+
+.message:empty,
+.alert:empty {
+  display: none;
+}
+
+.message-success,
+.alert-success {
+  color: var(--success);
+  background: var(--success-bg);
+  border-color: #b8e5c8;
+}
+
+.message-error,
+.alert-error {
+  color: var(--danger);
+  background: var(--danger-bg);
+  border-color: #f4c4c4;
+}
+
+.message-warning,
+.alert-warning {
+  color: var(--warning);
+  background: var(--warning-bg);
+  border-color: #f0d99b;
+}
+
+.message-info,
+.alert-info {
+  color: var(--primary);
+  background: var(--primary-light);
+}
+
+/* 9. DASHBOARD STATISTICS */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 26px;
+}
+
+.stat-card {
+  padding: 22px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.stat-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stat-card h3 {
+  margin: 8px 0 0;
+  color: var(--primary);
+  font-size: 30px;
+}
+
+/* 10. SUBJECT CHECKBOXES */
+.subject-grid,
+.subject-checkboxes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.subject-option,
+.subject-checkboxes label {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 11px;
+  background: #f8faff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.subject-option:hover,
+.subject-checkboxes label:hover {
+  border-color: var(--gold);
+  background: var(--gold-light);
+}
+
+/* 11. TABLES */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin: 18px 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--white);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  color: var(--white);
+  background: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+td {
+  font-size: 14px;
+}
+
+tbody tr:nth-child(even) {
+  background: #f8faff;
+}
+
+tbody tr:hover {
+  background: #eef3fb;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* 12. GRADES AND STATUS LABELS */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.badge-success {
+  color: var(--success);
+  background: var(--success-bg);
+}
+
+.badge-warning {
+  color: var(--warning);
+  background: var(--warning-bg);
+}
+
+.badge-danger {
+  color: var(--danger);
+  background: var(--danger-bg);
+}
+
+.badge-primary {
+  color: var(--primary);
+  background: var(--primary-light);
+}
+
+/* 13. STUDENT RESULT SUMMARY */
+.result-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 22px 0;
+}
+
+.summary-box {
+  padding: 18px;
+  text-align: center;
+  background: var(--primary-light);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.summary-box .summary-label {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.summary-box .summary-value {
+  display: block;
+  margin-top: 5px;
+  color: var(--primary);
+  font-size: 26px;
+  font-weight: 800;
+}
+
+/* 14. AVERAGE PERFORMANCE CIRCLE */
+.average-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 112px;
+  height: 112px;
+  margin: 12px auto;
+  color: var(--primary);
+  background: var(--white);
+  border: 8px solid var(--gold);
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(16, 42, 86, 0.1);
+}
+
+.average-circle.good {
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.average-circle.fair {
+  border-color: var(--gold);
+  color: var(--warning);
+}
+
+.average-circle.poor {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.average-remark,
+.overall-comment {
+  text-align: center;
+  font-weight: 700;
+}
+
+/* 15. OFFICIAL RESULT SHEET */
+.result-sheet {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 32px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--gold);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.result-school-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.result-school-heading img {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+}
+
+.result-school-heading h1 {
+  margin: 0;
+  color: var(--primary);
+  font-size: 26px;
+}
+
+.result-school-heading p {
+  margin: 4px 0;
+  color: var(--muted);
+}
+
+.result-divider {
+  height: 3px;
+  margin: 20px 0;
+  background: var(--gold);
+  border: none;
+}
+
+.student-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 24px;
+  margin: 20px 0;
+}
+
+.student-details-grid p {
+  margin: 4px 0;
+}
+
+.result-total-row {
+  color: var(--primary);
+  background: var(--primary-light);
+  font-weight: 800;
+}
+
+.result-signatures {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-top: 48px;
+}
+
+.signature-block {
+  width: 45%;
+  text-align: center;
+}
+
+.signature-block img {
+  display: block;
+  max-width: 130px;
+  max-height: 65px;
+  margin: 0 auto 8px;
+  object-fit: contain;
+}
+
+.signature-line {
+  padding-top: 8px;
+  border-top: 1px solid var(--text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.result-footer {
+  margin-top: 26px;
+  padding-top: 12px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 12px;
+}
+
+/* 16. EMPTY STATE */
+.empty-state {
+  padding: 28px 18px;
+  color: var(--muted);
+  background: var(--white);
+  border: 1px dashed #b8c4d6;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* 17. FOOTER */
+.site-footer {
+  padding: 22px 16px;
+  margin-top: 40px;
+  color: #e6ecf5;
+  background: var(--primary-dark);
+  text-align: center;
+  font-size: 13px;
+}
+
+.site-footer p {
+  margin: 4px 0;
+}
+
+.site-footer strong {
+  color: var(--gold);
+}
+
+/* 18. RESPONSIVE DESIGN */
+@media (max-width: 760px) {
+  .container {
+    width: 94%;
+    margin: 22px auto;
+  }
+
+  .school-header {
+    gap: 12px;
+    padding: 18px 12px;
+  }
+
+  .school-logo {
+    width: 62px;
+    height: 62px;
+  }
+
+  .school-header h1 {
+    font-size: 21px;
+  }
+
+  .school-header p {
+    font-size: 12px;
+  }
+
+  .navbar {
+    padding: 12px 4%;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .card,
+  .panel,
+  .form-card,
+  .login-card {
+    padding: 18px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .subject-grid,
+  .subject-checkboxes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .result-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .result-sheet {
+    padding: 18px;
+  }
+
+  .result-school-heading h1 {
+    font-size: 20px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .school-header {
+    align-items: center;
+  }
+
+  .school-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .school-header h1 {
+    font-size: 17px;
+  }
+
+  .school-header p {
+    font-size: 11px;
+  }
+
+  .form-grid,
+  .student-details-grid,
+  .stats-grid,
+  .subject-grid,
+  .subject-checkboxes {
+    grid-template-columns: 1fr;
+  }
+
+  .button-row {
+    flex-direction: column;
+  }
+
+  .button-row .btn,
+  .button-row button {
+    width: 100%;
+  }
+
+  .result-school-heading {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .result-school-heading img {
+    width: 58px;
+    height: 58px;
+  }
+
+  .result-signatures {
+    gap: 18px;
+  }
+
+  .signature-block {
+    width: 50%;
+  }
+}
+
+/* 19. PRINTING / SAVE AS PDF */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm;
+  }
+
+  body {
+    color: #111111;
+    background: #ffffff;
+    font-size: 11pt;
+  }
+
+  .no-print,
+  .navbar,
+  .site-footer,
+  .button-row,
+  button,
+  .btn,
+  .login-card,
+  .admin-only {
+    display: none !important;
+  }
+
+  .container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .result-sheet {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 10px;
+    border: 1px solid #999999;
+    border-top: 4px solid #b58a25;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .school-header {
+    border-bottom: 2px solid #b58a25;
+  }
+
+  .card,
+  .panel,
+  .form-card,
+  .summary-box {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  table {
+    width: 100%;
+    font-size: 10pt;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 7px;
+    border: 1px solid #888888;
+    color: #111111;
+    background: #ffffff !important;
+  }
+
+  th {
+    font-weight: 800;
+  }
+
+  .result-total-row {
+    font-weight: 800;
+  }
+
+  .result-signatures {
+    break-inside: avoid;
+  }
+
+  .average-circle {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+
+
+
+/* =========================================
+   TWC — ADMIN PORTAL PROFESSIONAL FIX
+   Paste at the VERY BOTTOM of style.css
+========================================= */
+
+:root {
+  --twc-navy: #10264b;
+  --twc-navy-dark: #091a35;
+  --twc-gold: #d5a63b;
+  --twc-text: #243247;
+  --twc-muted: #64748b;
+  --twc-border: #dce4ef;
+  --twc-bg: #f3f6fb;
+}
+
+html {
+  min-height: 100%;
+  background: var(--twc-bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--twc-text);
+  background: var(--twc-bg);
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* School title and page headings */
+h1 {
+  color: var(--twc-navy);
+  font-size: clamp(25px, 3vw, 36px);
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+}
+
+h2,
+h3 {
+  color: var(--twc-navy);
+  line-height: 1.35;
+}
+
+p {
+  color: var(--twc-text);
+}
+
+/* Main content alignment */
+main,
+.container,
+.page-container,
+.page-content,
+main.container {
+  width: min(100% - 40px, 1050px);
+  margin: 35px auto;
+}
+
+/* Center the login heading and subtitle */
+body:has(input[type="password"]) h1 {
+  text-align: center;
+}
+
+body:has(input[type="password"]) h1 + p {
+  text-align: center;
+  color: var(--twc-muted);
+  margin-bottom: 28px;
+}
+
+/* Give the login panel a polished card appearance */
+form:has(input[type="password"]),
+section:has(form input[type="password"]),
+.card:has(input[type="password"]),
+.panel:has(input[type="password"]),
+.login-card:has(input[type="password"]) {
+  background: #ffffff;
+  border: 1px solid var(--twc-border);
+  border-radius: 16px;
+  box-shadow: 0 16px 45px rgba(16, 38, 75, 0.09);
+}
+
+/* Login form spacing */
+form:has(input[type="password"]) {
+  padding: 30px;
+}
+
+form:has(input[type="password"]) h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 25px;
+}
+
+form:has(input[type="password"]) p {
+  color: var(--twc-muted);
+}
+
+/* Form labels */
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--twc-navy);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+/* Password and other input fields */
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  color: var(--twc-text);
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  font: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--twc-navy);
+  box-shadow: 0 0 0 3px rgba(16, 38, 75, 0.12);
+}
+
+input::placeholder {
+  color: #8995a7;
+}
+
+/* Professional buttons */
+button,
+input[type="submit"],
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 11px 22px;
+  color: #ffffff;
+  background: var(--twc-navy);
+  border: 1px solid var(--twc-navy);
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+button:hover,
+input[type="submit"]:hover,
+.btn:hover {
+  background: var(--twc-navy-dark);
+}
+
+form:has(input[type="password"]) button,
+form:has(input[type="password"]) input[type="submit"] {
+  width: 100%;
+  margin-top: 16px;
+}
+
+/* Gold accent */
+hr {
+  height: 2px;
+  background: var(--twc-gold);
+  border: 0;
+}
+
+/* Tables */
+.table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--twc-border);
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  padding: 13px;
+  color: #ffffff;
+  background: var(--twc-navy);
+  text-align: left;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid var(--twc-border);
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  main,
+  .container,
+  .page-container,
+  .page-content,
+  main.container {
+    width: calc(100% - 24px);
+    margin: 22px auto;
+  }
+
+  form:has(input[type="password"]) {
+    padding: 22px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+}

@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Portal | TOTAL WINNERS CHILD</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="admin">
+  <main class="admin-wrap">
+    <header class="school-heading">
+      <div class="school-logo">TWC</div>
+      <h1>TOTAL WINNERS CHILD</h1>
+      <p>School Results Management Portal</p>
+    </header>
+
+    <section class="panel" id="admin-login-panel">
+      <h2>Administrator Login</h2>
+      <p id="admin-setup-message">Enter your administrator password.</p>
+      <form id="admin-login-form">
+        <label for="admin-password">Administrator Password</label>
+        <input id="admin-password" type="password" required
+          autocomplete="current-password" placeholder="Administrator password">
+
+        <div id="admin-confirm-label">
+          <label for="admin-confirm-password">Confirm Password</label>
+          <input id="admin-confirm-password" type="password" minlength="8"
+            placeholder="Confirm password">
+        </div>
+
+        <button id="admin-submit-button" type="submit">Sign In</button>
+        <p id="admin-login-message" class="message" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="admin-workspace" class="hidden">
+      <section class="panel admin-welcome">
+        <h2>Welcome, Admin!</h2>
+        <p>Manage student accounts, select subjects, enter results and prepare official result sheets.</p>
+        <button id="admin-logout-button" type="button">Log Out</button>
+        <button id="export-data-button" type="button">Export Student Backup</button>
+        <p id="admin-action-message" class="message" role="status"></p>
+      </section>
+
+      <section class="panel">
+        <h2>Register a Student</h2>
+        <form id="register-student-form">
+          <div class="admin-form">
+            <div>
+              <label for="new-name">Student Full Name</label>
+              <input id="new-name" required placeholder="Full name">
+            </div>
+            <div>
+              <label for="new-id">Unique Student ID</label>
+              <input id="new-id" required placeholder="e.g. GODDESS">
+            </div>
+            <div>
+              <label for="new-password">Student Password</label>
+              <input id="new-password" type="password" minlength="4"
+                required placeholder="Create student's password">
+            </div>
+            <div>
+              <label for="new-class">Class</label>
+              <select id="new-class" required>
+                <option value="">Select class</option>
+                <option>SS1</option>
+                <option>SS2</option>
+                <option>SS3</option>
+              </select>
+            </div>
+            <div>
+              <label for="new-department">Department</label>
+              <select id="new-department" required>
+                <option value="">Select department</option>
+                <option value="General">General / SS1</option>
+                <option value="Science">Science</option>
+                <option value="Arts">Arts</option>
+              </select>
+            </div>
+          </div>
+
+          <h3>Select the Student's Subjects</h3>
+          <p>Tick the subjects this student takes. You can select several subjects.</p>
+          <div id="subject-checkboxes" class="subject-checkboxes">
+            <p class="muted">Choose a class and department first.</p>
+          </div>
+
+          <button type="submit">Register Student</button>
+          <p id="register-message" class="message" role="status"></p>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Enter or Update Results</h2>
+        <form id="upload-result-form">
+          <div class="admin-form">
+            <div>
+              <label for="result-student">Select Student</label>
+              <select id="result-student" required>
+                <option value="">Select student</option>
+              </select>
+            </div>
+            <div>
+              <label for="result-session">Academic Session</label>
+              <input id="result-session" required placeholder="2026/2027">
+            </div>
+            <div>
+              <label for="result-term">Term</label>
+              <select id="result-term" required>
+                <option value="">Select term</option>
+                <option>First Term</option>
+                <option>Second Term</option>
+                <option>Third Term</option>
+              </select>
+            </div>
+            <div>
+              <label for="result-subject">Assigned Subject</label>
+              <select id="result-subject" required>
+                <option value="">Select a student first</option>
+              </select>
+            </div>
+            <div>
+              <label for="result-ca">CA Score (out of 40)</label>
+              <input id="result-ca" type="number" min="0" max="40" required>
+            </div>
+            <div>
+              <label for="result-exam">Exam Score (out of 60)</label>
+              <input id="result-exam" type="number" min="0" max="60" required>
+            </div>
+          </div>
+          <button type="submit">Save Student Result</button>
+          <p id="result-message" class="message" role="status"></p>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Registered Students</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Student Name</th>
+                <th>Student ID</th>
+                <th>Class</th>
+                <th>Department</th>
+                <th>Subjects</th>
+              </tr>
+            </thead>
+            <tbody id="students-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Change a Student's Password</h2>
+        <p>Use this when a student reports a forgotten or incorrect password.</p>
+        <form id="reset-student-password-form">
+          <label for="reset-student">Select Student</label>
+          <select id="reset-student" required>
+            <option value="">Select student</option>
+          </select>
+          <label for="reset-password">New Student Password</label>
+          <input id="reset-password" type="password" minlength="4" required
+            placeholder="Enter new password">
+          <button type="submit">Update Student Password</button>
+          <p id="reset-password-message" class="message" role="status"></p>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
